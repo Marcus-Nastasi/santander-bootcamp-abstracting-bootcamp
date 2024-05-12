@@ -12,7 +12,7 @@ public class Course extends Content {
 
     @Override
     public double calculateXp() {
-        return 0;
+        return xp * this.totalHours;
     }
 
     @Override
