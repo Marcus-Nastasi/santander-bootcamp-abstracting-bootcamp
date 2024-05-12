@@ -8,6 +8,22 @@ public abstract class Content {
     private String description;
 
     public abstract double calculateXp();
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    protected void setTitle(String title) {
+        this.title = title;
+    }
+
+    protected void setDescription(String description) {
+        this.description = description;
+    }
 }
 
 

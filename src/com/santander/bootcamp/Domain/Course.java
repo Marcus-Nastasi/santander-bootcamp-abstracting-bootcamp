@@ -1,32 +1,27 @@
 package com.santander.bootcamp.Domain;
 
-public class Course {
+public class Course extends Content {
 
-    private final String title;
-    private final String description;
     private final int totalHours;
 
     public Course(String title, String description, int totalHours) {
-        this.title = title;
-        this.description = description;
+        this.setTitle(title);
+        this.setDescription(description);
         this.totalHours = totalHours;
+    }
+
+    @Override
+    public double calculateXp() {
+        return 0;
     }
 
     @Override
     public String toString() {
         return(
-            "Course{" + "title='" + title + '\'' +
-            ", description='" + description + '\'' +
+            "Course{" + "title='" + this.getTitle() + '\'' +
+            ", description='" + this.getDescription() + '\'' +
             ", totalHours=" + totalHours + '}'
         );
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public int getTotalHours() {
