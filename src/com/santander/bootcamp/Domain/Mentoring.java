@@ -1,5 +1,6 @@
 package com.santander.bootcamp.Domain;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -10,10 +11,10 @@ public class Mentoring {
     private final Date date;
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Mentoring(String title, String description, Date date) {
+    public Mentoring(String title, String description, String date) throws ParseException {
         this.title = title;
         this.description = description;
-        this.date = date;
+        this.date = sdf.parse(date);
     }
 
     @Override
