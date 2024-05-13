@@ -2,6 +2,7 @@ package com.santander.bootcamp.Domain;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Dev {
@@ -11,11 +12,15 @@ public class Dev {
     private final Set<Content> completed = new LinkedHashSet<>();
 
     public void subscribeBootcamp(Bootcamp bootcamp) {
-        this.inscriptions.add();
+        this.inscriptions.addAll(bootcamp.getContentArrayList());
     }
 
     public void progress() {
-
+        Optional<Content> c = this.inscriptions.stream().findFirst();
+        if (c.isPresent()) {
+            this.completed.add(c.get());
+            this.inscriptions.remove(c.get());
+        }
     }
 
 
