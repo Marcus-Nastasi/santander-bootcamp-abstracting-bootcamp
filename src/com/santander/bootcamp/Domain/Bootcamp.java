@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
@@ -32,6 +33,19 @@ public class Bootcamp {
             ", contentArrayList=" + contentArrayList +
             ", devArrayList=" + devArrayList + '}'
         );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bootcamp bootcamp = (Bootcamp) o;
+        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description) && Objects.equals(initDate, bootcamp.initDate) && Objects.equals(finalDate, bootcamp.finalDate) && Objects.equals(contentArrayList, bootcamp.contentArrayList) && Objects.equals(devArrayList, bootcamp.devArrayList) && Objects.equals(sdf, bootcamp.sdf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description, initDate, finalDate, contentArrayList, devArrayList, sdf);
     }
 
     public String getName() {

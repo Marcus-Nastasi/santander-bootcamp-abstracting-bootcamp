@@ -11,7 +11,7 @@ public class Dev {
     private final Set<Content> completed = new LinkedHashSet<>();
 
     public void subscribeBootcamp(Bootcamp bootcamp) {
-
+        this.inscriptions.add();
     }
 
     public void progress() {

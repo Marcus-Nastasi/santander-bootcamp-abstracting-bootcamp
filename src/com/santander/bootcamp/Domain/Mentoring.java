@@ -25,7 +25,7 @@ public class Mentoring extends Content {
         return(
             "Mentoring{" + "title='" + this.getTitle() + '\'' +
             ", description='" + this.getDescription() + '\'' +
-            ", date=" + sdf.format(date) + '}'
+            ", date=" + this.sdf.format(date) + '}'
         );
     }
 
