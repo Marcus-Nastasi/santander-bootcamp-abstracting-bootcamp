@@ -1,6 +1,7 @@
 package com.santander.bootcamp.Domain;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Dev {
@@ -8,6 +9,32 @@ public class Dev {
     private String name;
     private final Set<Content> inscriptions = new HashSet<>();
     private final Set<Content> completed = new HashSet<>();
+
+    public void subscribeBootcamp(Bootcamp bootcamp) {
+
+    }
+
+    public void progress() {
+
+    }
+
+
+    public void calculateXp() {
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dev dev = (Dev) o;
+        return Objects.equals(name, dev.name) && Objects.equals(inscriptions, dev.inscriptions) && Objects.equals(completed, dev.completed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, inscriptions, completed);
+    }
 
     public Dev(String name) {
         this.name = name;
