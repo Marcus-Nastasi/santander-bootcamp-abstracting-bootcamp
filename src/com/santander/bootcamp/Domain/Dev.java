@@ -1,14 +1,15 @@
 package com.santander.bootcamp.Domain;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class Dev {
 
     private String name;
-    private final Set<Content> inscriptions = new HashSet<>();
-    private final Set<Content> completed = new HashSet<>();
+    private final Set<Content> inscriptions = new LinkedHashSet<>();
+    private final Set<Content> completed = new LinkedHashSet<>();
 
     public void subscribeBootcamp(Bootcamp bootcamp) {
 

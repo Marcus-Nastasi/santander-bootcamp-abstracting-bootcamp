@@ -2,7 +2,9 @@ package com.santander.bootcamp.Domain;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Bootcamp {
 
@@ -10,8 +12,8 @@ public class Bootcamp {
     private String description;
     private LocalDate initDate = LocalDate.now();
     private LocalDate finalDate = initDate.plusDays(45);
-    private final ArrayList<Content> contentArrayList = new ArrayList<>();
-    private final ArrayList<Dev> devArrayList = new ArrayList<>();
+    private final Set<Content> contentArrayList = new LinkedHashSet<>();
+    private final Set<Dev> devArrayList = new HashSet<>();
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public Bootcamp(String name, String description) {
@@ -64,11 +66,11 @@ public class Bootcamp {
         this.finalDate = finalDate;
     }
 
-    public ArrayList<Content> getContentArrayList() {
+    public Set<Content> getContentArrayList() {
         return contentArrayList;
     }
 
-    public ArrayList<Dev> getDevArrayList() {
+    public Set<Dev> getDevArrayList() {
         return devArrayList;
     }
 }
