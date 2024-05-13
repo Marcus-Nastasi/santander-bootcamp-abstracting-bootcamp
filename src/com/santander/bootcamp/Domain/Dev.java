@@ -1,15 +1,16 @@
 package com.santander.bootcamp.Domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Dev {
 
     private String name;
-    private int inscriptions;
-    private int completed;
+    private final Set<Content> inscriptions = new HashSet<>();
+    private final Set<Content> completed = new HashSet<>();
 
-    public Dev(String name, int inscriptions, int completed) {
+    public Dev(String name) {
         this.name = name;
-        this.inscriptions = inscriptions;
-        this.completed = completed;
     }
 
     public String getName() {
@@ -20,20 +21,12 @@ public class Dev {
         this.name = name;
     }
 
-    public int getInscriptions() {
+    public Set<Content> getInscriptions() {
         return inscriptions;
     }
 
-    public void setInscriptions(int inscriptions) {
-        this.inscriptions = inscriptions;
-    }
-
-    public int getCompleted() {
+    public Set<Content> getCompleted() {
         return completed;
-    }
-
-    public void setCompleted(int completed) {
-        this.completed = completed;
     }
 }
 
