@@ -1,5 +1,7 @@
 package com.santander.bootcamp.Domain;
 
+import com.santander.bootcamp.Exceptions.DevException;
+
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,15 +18,11 @@ public class Dev {
         bootcamp.getDevArrayList().add(this);
     }
 
-    public void progress() {
+    public void progress() throws DevException {
         Optional<Content> c = this.inscriptions.stream().findFirst();
-        if (c.isPresent()) {
-            this.completed.add(c.get());
-            this.inscriptions.remove(c.get());
-            return;
-        }
-        
-        System.err.println("Dev Error: no content on inscriptions");
+        if (!c.isPresent()) throw new DevException("Dev Error: no content on inscriptions");
+        this.completed.add(c.get());
+        this.inscriptions.remove(c.get());
     }
 
     public double calculateXp() {
