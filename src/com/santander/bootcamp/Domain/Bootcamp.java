@@ -28,8 +28,8 @@ public class Bootcamp {
             "Bootcamp{" +
             "name='" + name + '\'' +
             ", description='" + description + '\'' +
-            ", initDate=" + sdf.format(initDate) +
-            ", finalDate=" + sdf.format(finalDate) +
+            ", initDate=" + initDate +
+            ", finalDate=" + finalDate +
             ", contentArrayList=" + contentArrayList +
             ", devArrayList=" + devArrayList + '}'
         );

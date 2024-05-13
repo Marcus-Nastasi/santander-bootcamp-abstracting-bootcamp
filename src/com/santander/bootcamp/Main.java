@@ -1,16 +1,26 @@
 package com.santander.bootcamp;
 
-import com.santander.bootcamp.Domain.Content;
-import com.santander.bootcamp.Domain.Course;
-import com.santander.bootcamp.Domain.Mentoring;
+import com.santander.bootcamp.Domain.*;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            Content course = new Course("Java", "Java complete course", 140);
-            System.out.println(course);
+            Content c1 = new Course("Java Course", "Complete java course", 140);
+            Content m1 = new Mentoring("Java Mentoring", "Java's first mentoring", "12/10/2024");
+
+            Dev d1 = new Dev("Marc");
+            Dev d2 = new Dev("Maria");
+
+            Bootcamp bJava = new Bootcamp("Java Bootcamp", "Java's most complete bootcamp");
+            bJava.getDevArrayList().add(d1);
+            bJava.getDevArrayList().add(d2);
+            bJava.getContentArrayList().add(c1);
+            bJava.getContentArrayList().add(m1);
+
+            System.out.println(bJava);
         } catch (Exception e) {
             System.err.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
