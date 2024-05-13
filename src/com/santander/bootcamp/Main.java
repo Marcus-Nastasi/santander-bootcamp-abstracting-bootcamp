@@ -12,10 +12,11 @@ public class Main {
             Dev d2 = new Dev("Maria");
 
             Bootcamp bJava = new Bootcamp("Java Bootcamp", "Java's most complete bootcamp");
-            bJava.getDevArrayList().add(d1);
-            bJava.getDevArrayList().add(d2);
             bJava.getContentArrayList().add(c1);
             bJava.getContentArrayList().add(m1);
+
+            d1.subscribeBootcamp(bJava);
+            d2.subscribeBootcamp(bJava);
 
             System.out.println(bJava);
         } catch (Exception e) {
