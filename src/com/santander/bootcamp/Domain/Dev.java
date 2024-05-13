@@ -27,8 +27,8 @@ public class Dev {
         System.err.println("Dev Error: no content on inscriptions");
     }
 
-    public void calculateXp() {
-
+    public double calculateXp() {
+        return this.completed.stream().mapToDouble(Content::calculateXp).sum();
     }
 
     @Override
