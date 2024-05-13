@@ -13,6 +13,7 @@ public class Dev {
 
     public void subscribeBootcamp(Bootcamp bootcamp) {
         this.inscriptions.addAll(bootcamp.getContentArrayList());
+        bootcamp.getDevArrayList().add(this);
     }
 
     public void progress() {
@@ -20,9 +21,11 @@ public class Dev {
         if (c.isPresent()) {
             this.completed.add(c.get());
             this.inscriptions.remove(c.get());
+            return;
         }
+        
+        System.err.println("Dev Error: no content on inscriptions");
     }
-
 
     public void calculateXp() {
 
