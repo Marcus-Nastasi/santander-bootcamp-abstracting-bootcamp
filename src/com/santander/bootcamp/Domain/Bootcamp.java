@@ -1,24 +1,35 @@
 package com.santander.bootcamp.Domain;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Bootcamp {
 
     private String name;
     private String description;
-    private Date initDate = new Date();
-    private Date finalDate;
+    private LocalDate initDate = LocalDate.now();
+    private LocalDate finalDate = initDate.plusDays(45);
     private final ArrayList<Content> contentArrayList = new ArrayList<>();
     private final ArrayList<Dev> devArrayList = new ArrayList<>();
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Bootcamp(String name, String description, Date initDate, Date finalDate) {
+    public Bootcamp(String name, String description) {
         this.name = name;
         this.description = description;
-        this.initDate = initDate;
-        this.finalDate = finalDate;
+    }
+
+    @Override
+    public String toString() {
+        return(
+            "Bootcamp{" +
+            "name='" + name + '\'' +
+            ", description='" + description + '\'' +
+            ", initDate=" + sdf.format(initDate) +
+            ", finalDate=" + sdf.format(finalDate) +
+            ", contentArrayList=" + contentArrayList +
+            ", devArrayList=" + devArrayList + '}'
+        );
     }
 
     public String getName() {
@@ -37,19 +48,19 @@ public class Bootcamp {
         this.description = description;
     }
 
-    public Date getInitDate() {
+    public LocalDate getInitDate() {
         return initDate;
     }
 
-    public void setInitDate(Date initDate) {
+    public void setInitDate(LocalDate initDate) {
         this.initDate = initDate;
     }
 
-    public Date getFinalDate() {
+    public LocalDate getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(Date finalDate) {
+    public void setFinalDate(LocalDate finalDate) {
         this.finalDate = finalDate;
     }
 
