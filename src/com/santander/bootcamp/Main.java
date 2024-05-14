@@ -18,7 +18,13 @@ public class Main {
             d1.subscribeBootcamp(bJava);
             d2.subscribeBootcamp(bJava);
 
-            System.out.println(bJava);
+            d1.progress();
+            d2.progress();
+            d1.progress();
+
+            System.out.println(d1);
+
+            //System.out.println(bJava);
         } catch (Exception e) {
             System.err.println(e.getMessage());
             e.printStackTrace();
