@@ -13,7 +13,8 @@ public class Dev {
     private final Set<Content> inscriptions = new LinkedHashSet<>();
     private final Set<Content> completed = new LinkedHashSet<>();
 
-    public void subscribeBootcamp(Bootcamp bootcamp) {
+    public void subscribeBootcamp(Bootcamp bootcamp) throws DevException {
+        if (bootcamp.getContentArrayList().isEmpty()) throw new DevException("Dev Error: content list on bootcamp empty");
         this.inscriptions.addAll(bootcamp.getContentArrayList());
         bootcamp.getDevArrayList().add(this);
     }
@@ -25,7 +26,8 @@ public class Dev {
         this.inscriptions.remove(c.get());
     }
 
-    public double calculateXp() {
+    public double calculateXp() throws DevException {
+        if (this.completed.isEmpty()) throw new DevException("Dev Error: no completed courses or mentorings");
         return this.completed.stream().mapToDouble(Content::calculateXp).sum();
     }
 
