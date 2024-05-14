@@ -13,8 +13,8 @@ public class Bootcamp {
     private String description;
     private LocalDate initDate = LocalDate.now();
     private LocalDate finalDate = initDate.plusDays(45);
-    private final Set<Content> contentArrayList = new LinkedHashSet<>();
-    private final Set<Dev> devArrayList = new HashSet<>();
+    private final Set<Content> contentList = new LinkedHashSet<>();
+    private final Set<Dev> devList = new HashSet<>();
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public Bootcamp(String name, String description) {
@@ -30,8 +30,8 @@ public class Bootcamp {
             ", description='" + description + '\'' +
             ", initDate=" + initDate +
             ", finalDate=" + finalDate +
-            ", contentArrayList=" + contentArrayList +
-            ", devArrayList=" + devArrayList + '}'
+            ", contentArrayList=" + contentList +
+            ", devArrayList=" + devList + '}'
         );
     }
 
@@ -40,12 +40,12 @@ public class Bootcamp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description) && Objects.equals(initDate, bootcamp.initDate) && Objects.equals(finalDate, bootcamp.finalDate) && Objects.equals(contentArrayList, bootcamp.contentArrayList) && Objects.equals(devArrayList, bootcamp.devArrayList) && Objects.equals(sdf, bootcamp.sdf);
+        return Objects.equals(name, bootcamp.name) && Objects.equals(description, bootcamp.description) && Objects.equals(initDate, bootcamp.initDate) && Objects.equals(finalDate, bootcamp.finalDate) && Objects.equals(contentList, bootcamp.contentList) && Objects.equals(devList, bootcamp.devList) && Objects.equals(sdf, bootcamp.sdf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, initDate, finalDate, contentArrayList, devArrayList, sdf);
+        return Objects.hash(name, description, initDate, finalDate, contentList, devList, sdf);
     }
 
     public String getName() {
@@ -80,12 +80,12 @@ public class Bootcamp {
         this.finalDate = finalDate;
     }
 
-    public Set<Content> getContentArrayList() {
-        return contentArrayList;
+    public Set<Content> getContentList() {
+        return contentList;
     }
 
-    public Set<Dev> getDevArrayList() {
-        return devArrayList;
+    public Set<Dev> getDevList() {
+        return devList;
     }
 }
 

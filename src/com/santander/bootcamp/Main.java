@@ -12,8 +12,8 @@ public class Main {
             Dev d2 = new Dev("Maria");
 
             Bootcamp bJava = new Bootcamp("Java Bootcamp", "Java's most complete bootcamp");
-            bJava.getContentArrayList().add(c1);
-            bJava.getContentArrayList().add(m1);
+            bJava.getContentList().add(c1);
+            bJava.getContentList().add(m1);
 
             d1.subscribeBootcamp(bJava);
             d2.subscribeBootcamp(bJava);

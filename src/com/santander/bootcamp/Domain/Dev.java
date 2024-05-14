@@ -14,9 +14,9 @@ public class Dev {
     private final Set<Content> completed = new LinkedHashSet<>();
 
     public void subscribeBootcamp(Bootcamp bootcamp) throws DevException {
-        if (bootcamp.getContentArrayList().isEmpty()) throw new DevException("Dev Error: content list on bootcamp empty");
-        this.inscriptions.addAll(bootcamp.getContentArrayList());
-        bootcamp.getDevArrayList().add(this);
+        if (bootcamp.getContentList().isEmpty()) throw new DevException("Dev Error: content list on bootcamp empty");
+        this.inscriptions.addAll(bootcamp.getContentList());
+        bootcamp.getDevList().add(this);
     }
 
     public void progress() throws DevException {
