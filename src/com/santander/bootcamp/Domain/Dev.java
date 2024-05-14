@@ -21,7 +21,7 @@ public class Dev {
 
     public void progress() throws DevException {
         Optional<Content> c = this.inscriptions.stream().findFirst();
-        if (!c.isPresent()) throw new DevException("Dev Error: no content on inscriptions");
+        if (c.isEmpty()) throw new DevException("Dev Error: no content on inscriptions");
         this.completed.add(c.get());
         this.inscriptions.remove(c.get());
     }
